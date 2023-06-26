@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-<!--
-CReacion de fragmentos
--->
+<!--Creacion de fragmentos Semana 4-->
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
     <head th:fragment="head">
@@ -24,7 +22,7 @@ CReacion de fragmentos
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <ul class="navbar-nav">
-                                                                           <!-- el @ se utiliza para rutas -->
+                            <!-- el @ se utiliza para rutas URL-->
                             <li class="nav-item px-2"><a class="nav-link" th:href="@{/categoria/listado}">[[#{plantilla.categorias}]]</a></li>
                             <li class="nav-item px-2"><a class="nav-link" th:href="@{/producto/listado}">[[#{plantilla.productos}]]</a></li>
                             <li class="nav-item px-2"><a class="nav-link" th:href="@{/usuario/listado}">[[#{plantilla.usuarios}]]</a></li>
@@ -51,11 +49,14 @@ CReacion de fragmentos
                 </div>
             </section>
         </header>
-
+        
+        <!--Creacion de fragmentos FOOTER-->
+        <!--sMt = margen p = padding -->
         <footer th:fragment="footer" class="bg-info text-white mt-5 p-2">
             <div class="container">
                 <div class="col">
                     <p class="lead text-center">
+                        <!--Elementos de timeleaf el plantilla. derechos se lo de trae de message properties-->
                         &COPY; [[#{plantilla.derechos}]]
                     </p>
                 </div>
