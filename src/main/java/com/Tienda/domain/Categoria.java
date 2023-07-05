@@ -3,6 +3,7 @@ package com.Tienda.domain;
 
 import jakarta.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 import lombok.Data;
 
 //setea los getter y setter
@@ -18,10 +19,14 @@ public class Categoria implements Serializable{
     @Id 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_categoria")      
-    private int idCategoria; // el Serializable lo TRANFORMAR EN id_categoria de la base de datos
+    private long idCategoria; // el Serializable lo TRANFORMAR EN id_categoria de la base de datos
     private String description; 
     private String rutaImagen;
     private boolean activo;
+    
+    @OneToMany
+    @JoinColumn(name = "id_producto")
+    private List<Producto> productos; 
 
     public Categoria() {
     }
