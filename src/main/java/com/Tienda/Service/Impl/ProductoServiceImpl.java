@@ -3,6 +3,7 @@ package com.Tienda.Service.Impl;
 import com.Tienda.dao.ProductoDao;
 import com.Tienda.domain.Producto;
 import com.Tienda.Service.ProductoService;
+import com.Tienda.domain.Categoria;
 import java.security.spec.NamedParameterSpec;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,6 +44,12 @@ public class ProductoServiceImpl implements ProductoService {
     public void delete(Producto producto) {
         productoDao.delete(producto);
     }
+    
+    //Ejemplo de método utilizando Métodos de Query
+ public List<Producto> findByPrecioBetweenOrderByDescripcion(double precioInf, double precioSup){
+     return productoDao.findByPrecioBetweenOrderByDescripcion(precioInf, precioSup);
+ }
+
 }
 
 

@@ -1,5 +1,6 @@
 package com.Tienda.Service;
 
+import com.Tienda.domain.Categoria;
 import com.Tienda.domain.Producto;
 import java.util.List;
 
@@ -16,4 +17,6 @@ public interface ProductoService {
     
     //se elimina un registro por su ID
     public void delete(Producto producto);
+    
+    public List<Producto> findByPrecioBetweenOrderByDescripcion(double precioInf, double precioSup);
 }
